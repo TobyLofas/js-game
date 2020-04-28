@@ -1,5 +1,3 @@
-import { deltaTime } from "./main";
-
 export default class Player {
   constructor(gameWidth, gameHeight) {
     this.width = 32;
@@ -24,8 +22,11 @@ export default class Player {
     ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
 
-  update() {
-    this.position.x += this.direction.x * this.speed;
-    this.position.y += this.direction.y * this.speed;
+  update(deltaTime) {
+    if (isNaN(deltaTime)) {
+      return false;
+    }
+    this.position.x += this.direction.x * this.speed * deltaTime;
+    this.position.y += this.direction.y * this.speed * deltaTime;
   }
 }

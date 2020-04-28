@@ -11,7 +11,7 @@ let player = new Player(SCREEN_WIDTH, SCREEN_HEIGHT);
 
 new InputHandler(player);
 
-export let deltaTime;
+var deltaTime;
 
 let fps;
 let timestep = 1000 / 60;
@@ -23,7 +23,7 @@ function gameLoop(timestamp) {
   deltaTime = timestamp - lastTime;
   lastTime = timestamp;
 
-  player.update();
+  player.update(deltaTime);
 
   player.draw(ctx);
 
