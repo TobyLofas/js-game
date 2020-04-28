@@ -11,7 +11,7 @@ let player = new Player(SCREEN_WIDTH, SCREEN_HEIGHT);
 
 new InputHandler(player);
 
-var deltaTime;
+let deltaTime;
 
 let fps;
 let timestep = 1000 / 60;
